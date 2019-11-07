@@ -22,11 +22,11 @@
         src: "files/cpu_map.xml.patch"
         dest: "/usr/share/libvirt/cpu_map.xml"
     - name: Restart the libvirt daemon
-      systemd:
+      service:
         name: libvirtd
         state: restarted
     - name: Restart nova-compute
-      systemd:
+      service:
         name: nova-compute
         state: restarted
 
