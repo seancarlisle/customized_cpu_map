@@ -1,0 +1,24 @@
+---
+#######
+# blah de blah here
+#
+#
+######
+
+- name: Apply cpu_map patch file
+  hosts: nova_compute
+  tasks:
+    - name: Apply cpu_map patch file
+      patch:
+        backup: yes
+        src: "files/cpu_map.xml.patch"
+        dest: "/usr/share/libvirt/cpu_map.xml"
+    - name: Restart the libvirt daemon
+      systemd:
+        name: libvirtd
+        state: restarted
+    - name: Restart nova-compute
+      systemd:
+        name: nova-compute
+        state: restarted
+

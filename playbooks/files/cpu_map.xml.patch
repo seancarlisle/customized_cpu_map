@@ -1,0 +1,107 @@
+--- cpu_map.xml.orig	2019-07-02 14:40:31.000000000 +0000
++++ cpu_map.xml	2019-11-07 17:40:28.386582785 +0000
+@@ -364,6 +364,15 @@
+       <cpuid function='0x80000008' ebx='0x02000000'/>
+     </feature>
+
++    <!-- Additional features for E5-2680 v4 -->
++    <feature name='arat'>
++      <cpuid function='0x00000006' eax='0x00000004'/>
++    </feature>
++    <feature name='pclmulqdq'>
++      <cpuid function='0x00000001' ecx='0x00000002'/>
++    </feature>
++    <!-- Additional features for E5-2680 v4 -->
++
+     <!-- models -->
+     <model name='486'>
+       <feature name='fpu'/>
+@@ -1543,6 +1552,88 @@
+       <feature name='xsave'/>
+     </model>
+
++    <!-- Custom CPU model for live-migrations between Intel Xeon E5-2680 v4 and Intel Xeon Gold 5120 -->
++    <model name='Broadwell-Custom'>
++      <vendor name='Intel'/>
++      <feature name='3dnowprefetch'/>
++      <feature name='acpi'/>
++      <feature name='adx'/>
++      <feature name='aes'/>
++      <feature name='apic'/>
++      <feature name='arat'/>
++      <feature name='avx'/>
++      <feature name='avx2'/>
++      <feature name='bmi1'/>
++      <feature name='bmi2'/>
++      <feature name='clflush'/>
++      <feature name='cmov'/>
++      <feature name='cx16'/>
++      <feature name='cx8'/>
++      <feature name='dca'/>
++      <feature name='de'/>
++      <feature name='ds_cpl'/>
++      <feature name='dtes64'/>
++      <feature name='erms'/>
++      <feature name='est'/>
++      <feature name='f16c'/>
++      <feature name='fma'/>
++      <feature name='fpu'/>
++      <feature name='fsgsbase'/>
++      <feature name='fxsr'/>
++      <feature name='hle'/>
++      <feature name='ht'/>
++      <feature name='invpcid'/>
++      <feature name='lahf_lm'/>
++      <feature name='lm'/>
++      <feature name='mca'/>
++      <feature name='mce'/>
++      <feature name='md-clear'/>
++      <feature name='mmx'/>
++      <feature name='monitor'/>
++      <feature name='movbe'/>
++      <feature name='mpx'/>
++      <feature name='msr'/>
++      <feature name='mtrr'/>
++      <feature name='nx'/>
++      <feature name='pae'/>
++      <feature name='pat'/>
++      <feature name='pbe'/>
++      <feature name='pcid'/>
++      <feature name='pclmulqdq'/>
++      <feature name='pdcm'/>
++      <feature name='pdpe1gb'/>
++      <feature name='pge'/>
++      <feature name='pni'/>
++      <feature name='popcnt'/>
++      <feature name='pse'/>
++      <feature name='pse36'/>
++      <feature name='rdrand'/>
++      <feature name='rdseed'/>
++      <feature name='rdtscp'/>
++      <feature name='rtm'/>
++      <feature name='sep'/>
++      <feature name='smap'/>
++      <feature name='smep'/>
++      <feature name='smx'/>
++      <feature name='ss'/>
++      <feature name='ssbd'/>
++      <feature name='sse'/>
++      <feature name='sse2'/>
++      <feature name='sse4.1'/>
++      <feature name='sse4.2'/>
++      <feature name='ssse3'/>
++      <feature name='syscall'/>
++      <feature name='tm'/>
++      <feature name='tm2'/>
++      <feature name='tsc'/>
++      <feature name='vme'/>
++      <feature name='vmx'/>
++      <feature name='x2apic'/>
++      <feature name='xsave'/>
++      <feature name='xtpr'/>
++    </model>
++    <!-- Custom CPU model for live-migrations between Intel Xeon E5-2680 v4 and Intel Xeon Gold 5120 -->
++
+     <!-- AMD CPUs -->
+     <model name='athlon'>
+       <vendor name='AMD'/>
