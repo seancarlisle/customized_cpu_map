@@ -1,5 +1,5 @@
 --- cpu_map.xml.orig	2019-07-02 14:40:31.000000000 +0000
-+++ cpu_map.xml	2019-11-07 17:40:28.386582785 +0000
++++ cpu_map.xml	2019-11-13 16:25:56.021598537 +0000
 @@ -364,6 +364,15 @@
        <cpuid function='0x80000008' ebx='0x02000000'/>
      </feature>
@@ -16,7 +16,7 @@
      <!-- models -->
      <model name='486'>
        <feature name='fpu'/>
-@@ -1543,6 +1552,88 @@
+@@ -1543,6 +1552,87 @@
        <feature name='xsave'/>
      </model>
 
@@ -59,7 +59,6 @@
 +      <feature name='mmx'/>
 +      <feature name='monitor'/>
 +      <feature name='movbe'/>
-+      <feature name='mpx'/>
 +      <feature name='msr'/>
 +      <feature name='mtrr'/>
 +      <feature name='nx'/>
